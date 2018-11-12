@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { asyncForEach, asyncMap } from '../src/index';
+import { asyncForEach, asyncMap, pick } from '../src/index';
 
 describe('Instant Utils', () => {
   it('asyncForEach should exist', () => {
@@ -8,5 +8,9 @@ describe('Instant Utils', () => {
 
   it('asyncMap should exist', () => {
     assert.equal(typeof asyncMap, 'function');
+  });
+
+  it('pick should exist', () => {
+    assert.equal(typeof pick, 'function');
   });
 });
