@@ -52,7 +52,7 @@ console.log(result); // => { name: 'Australia' };
 
 Asyncronous For Each function, enabling multiple loop iterations to be wrapped in one completion promise.
 
-### Arguments
+#### Arguments
 
 `array (Array)`: The array to iterate over.
 `iteratee (Function)`: The function invoked per iteration.
@@ -74,9 +74,21 @@ async function getCountries() {
 
 ### Async Map
 
-### pick
+#### Arguments
+
+#### Example Usage
+
+### Pick
+
+#### Arguments
+
+#### Example Usage
 
 ### Async For Each
+
+#### Arguments
+
+#### Example Usage
 
 ## Contributing
 
