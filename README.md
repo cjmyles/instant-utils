@@ -33,7 +33,7 @@ import { pick } from 'instant-utils';
 
 const country = { id: 1, name: 'Australia' };
 const result = pick(country, ['name']);
-console.log(result); // => { name: 'Australia' };
+console.log(result); // => { name: 'Australia' }
 ```
 
 **CommonJS Modules**
@@ -43,7 +43,7 @@ var utils = require('instant-utils');
 
 var country = { id: 1, name: 'Australia' };
 var result = utils.pick(country, ['name']);
-console.log(result); // => { name: 'Australia' };
+console.log(result); // => { name: 'Australia' }
 ```
 
 ## API
@@ -54,19 +54,21 @@ Asyncronous For Each function, enabling multiple loop iterations to be wrapped i
 
 #### Arguments
 
-`array (Array)`: The array to iterate over.\
+`arr (Array)`: The array to iterate over.\
 `iteratee (Function)`: The function invoked per iteration.
+
+#### Returns
+
+`Array`
 
 #### Example Usage
 
 ```js
 async function getCountries() {
-  const countries = [
-    { id: 'scotland', name: 'Scotland' },
-    { id: 'australia', name: 'Australia' },
+  const countries = ['scotland', 'australia'],
   ];
-  return await asyncForEach(country, () => {
-    const response = await fetch(`/api/countries/${country.id}`);
+  return await asyncForEach(countries, country => {
+    const response = await fetch(`/api/countries/${country}`);
     return await response.json();
   });
 }
@@ -74,21 +76,74 @@ async function getCountries() {
 
 ### Async Map
 
+Asyncronous Map function, enabling multiple map iterations to be wrapped in one completion promise.
+
 #### Arguments
 
+`arr (Array)`: The array to iterate over.\
+`iteratee (Function)`: The function invoked per iteration.
+
+#### Returns
+
+`Array`
+
 #### Example Usage
+
+```js
+async function mapCountries() {
+  const countries = [
+    { id: 'scotland', name: 'Scotland' },
+    { id: 'australia', name: 'Australia' },
+  ];
+  return await asyncMap(countries, country => {
+    return {
+      ...country,
+      visited: true,
+    };
+  });
+}
+```
 
 ### Pick
 
-#### Arguments
-
-#### Example Usage
-
-### Async For Each
+Creates an object composed of the picked object properties.
 
 #### Arguments
 
+`obj (Object)`: The source object.\
+`keys (Array)`: The property keys to pick.
+
+#### Returns
+
+`Object`
+
 #### Example Usage
+
+```js
+const country = { id: 1, name: 'Australia' };
+const result = pick(country, ['name']);
+console.log(result); // => { name: 'Australia' }
+```
+
+### Remove Undefineds
+
+Creates an object composed of non-undefined-valued object properties.
+
+#### Arguments
+
+`obj (Object)`: The source object.\
+
+#### Returns
+
+`Object`
+
+#### Example Usage
+
+```js
+const country = { id: 1, name: 'Australia', unicorns: undefined };
+const result = removeUndefineds(country);
+console.log(result); // => { id: 1, name: 'Australia' }
+```
 
 ## Contributing
 

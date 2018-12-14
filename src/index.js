@@ -1,13 +1,13 @@
-export async function asyncForEach(array, iteratee) {
-  for (let index = 0; index < array.length; index++) {
-    await iteratee(array[index], index, array);
+export async function asyncForEach(arr, iteratee) {
+  for (let index = 0; index < arr.length; index++) {
+    await iteratee(arr[index], index, arr);
   }
 }
 
-export async function asyncMap(array, iteratee) {
+export async function asyncMap(arr, iteratee) {
   let results = [];
-  for (let index = 0; index < array.length; index++) {
-    const result = await iteratee(array[index], index, array);
+  for (let index = 0; index < arr.length; index++) {
+    const result = await iteratee(arr[index], index, arr);
     results.push(result);
   }
   return results;
