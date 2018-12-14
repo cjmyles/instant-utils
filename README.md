@@ -1,17 +1,22 @@
 # Instant Utils
 
-Javascript helper methods.
+Lightweight utility library to assist other `instant` packages.
 
-_**Please note:** This is specifically tailored for `instant` packages. If you are not a member of the Instant Feedback team, please avoid using this package_
+## Table of Contents
 
-## Features
-
-- Async For Each
-- Async Map
+- [Installation](#installation)
+- [Usage](#usage)
+- [API](#api)
+  - [Async For Each](#async-for-each)
+  - [Async Map](#async-map)
+  - [Pick](#pick)
+  - [Remove Undefineds](#removeUndefineds)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Installation
 
-You can install this wrapper by running the following in your project:
+You can install this package using npm:
 
 ```bash
 $ npm install instant-utils
@@ -19,31 +24,63 @@ $ npm install instant-utils
 
 ## Usage
 
+Here is a quick example to get you started:
+
 **ES Modules**
 
 ```javascript
-import { asyncMap } from 'instant-utils';
+import { pick } from 'instant-utils';
 
-// Do stuff with asyncMap or any of the other Utils you import
+const country = { id: 1, name: 'Australia' };
+const result = pick(country, ['name']);
+console.log(result); // => { name: 'Australia' };
 ```
 
 **CommonJS Modules**
 
 ```javascript
-const utils = require('instant-utils');
+var utils = require('instant-utils');
 
-// Do stuff with asyncMap or any of the other Utils you import
+var country = { id: 1, name: 'Australia' };
+var result = utils.pick(country, ['name']);
+console.log(result); // => { name: 'Australia' };
 ```
 
-## Running Tests
+## API
 
-To run the tests, clone the repository and install the dependencies:
+### Async For Each
 
-```bash
-git clone https://github.com/JSJInvestments/instant-utils.git
-cd instant-utils && npm i
-npm run test
+Asyncronous For Each function, enabling multiple loop iterations to be wrapped in one completion promise.
+
+### Arguments
+
+`array (Array)`: The array to iterate over.
+`iteratee (Function)`: The function invoked per iteration.
+
+#### Example Usage
+
+```js
+async function getCountries() {
+  const countries = [
+    { id: 'scotland', name: 'Scotland' },
+    { id: 'australia', name: 'Australia' },
+  ];
+  return await asyncForEach(country, () => {
+    const response = await fetch(`/api/countries/${country.id}`);
+    return await response.json();
+  });
+}
 ```
+
+### Async Map
+
+### pick
+
+### Async For Each
+
+## Contributing
+
+We'd greatly appreciate any [contribution](CONTRIBUTING.md)) you make.
 
 ## License
 

@@ -1,13 +1,13 @@
-export async function asyncForEach(array, callback) {
+export async function asyncForEach(array, iteratee) {
   for (let index = 0; index < array.length; index++) {
-    await callback(array[index], index, array);
+    await iteratee(array[index], index, array);
   }
 }
 
-export async function asyncMap(array, callback) {
+export async function asyncMap(array, iteratee) {
   let results = [];
   for (let index = 0; index < array.length; index++) {
-    const result = await callback(array[index], index, array);
+    const result = await iteratee(array[index], index, array);
     results.push(result);
   }
   return results;
