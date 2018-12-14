@@ -54,7 +54,7 @@ Asyncronous For Each function, enabling multiple loop iterations to be wrapped i
 
 #### Arguments
 
-`array (Array)`: The array to iterate over.
+`array (Array)`: The array to iterate over.\
 `iteratee (Function)`: The function invoked per iteration.
 
 #### Example Usage
