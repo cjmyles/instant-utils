@@ -147,7 +147,7 @@ console.log(result); // => { id: 1, name: 'Australia' }
 
 ## Contributing
 
-We'd greatly appreciate any [contribution](CONTRIBUTING.md)) you make.
+We'd greatly appreciate any [contribution](CONTRIBUTING.md) you make.
 
 ## License
 
