@@ -1,7 +1,7 @@
 {
   "name": "instant-utils",
-  "version": "1.0.0",
-  "description": "Lightweight utility library to assist other `instant` packages.",
+  "version": "1.0.1",
+  "description": "Lightweight utility library to assist other [`instant`](https://github.com/cjmyles/instant) packages.",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha --require babel-core/register --require babel-polyfill",
