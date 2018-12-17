@@ -1,16 +1,16 @@
 # Instant Utils
 
-Lightweight utility library to assist other `instant` packages.
+Lightweight utility library to assist other [`instant`](https://github.com/cjmyles/instant) packages.
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [API](#api)
-  - [Async For Each](#async-for-each)
-  - [Async Map](#async-map)
-  - [Pick](#pick)
-  - [Remove Undefineds](#removeUndefineds)
+  - [asyncForEach](#asyncforeach)
+  - [asyncMap](#asyncmap)
+  - [pick](#pick)
+  - [removeUndefineds](#removeundefineds)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -48,7 +48,7 @@ console.log(result); // => { name: 'Australia' }
 
 ## API
 
-### Async For Each
+### asyncForEach
 
 Asyncronous For Each function, enabling multiple loop iterations to be wrapped in one completion promise.
 
@@ -74,7 +74,7 @@ async function getCountries() {
 }
 ```
 
-### Async Map
+### asyncMap
 
 Asyncronous Map function, enabling multiple map iterations to be wrapped in one completion promise.
 
@@ -104,7 +104,7 @@ async function mapCountries() {
 }
 ```
 
-### Pick
+### pick
 
 Creates an object composed of the picked object properties.
 
@@ -125,13 +125,13 @@ const result = pick(country, ['name']);
 console.log(result); // => { name: 'Australia' }
 ```
 
-### Remove Undefineds
+### removeUndefineds
 
 Creates an object composed of non-undefined-valued object properties.
 
 #### Arguments
 
-`obj (Object)`: The source object.\
+`obj (Object)`: The source object.
 
 #### Returns
 
