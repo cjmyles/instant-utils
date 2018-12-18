@@ -14,7 +14,9 @@
     "url": "git+https://github.com/cjmyles/instant-utils.git"
   },
   "keywords": [
-    "javascript"
+    "javascript",
+    "es6",
+    "async"
   ],
   "author": "Craig Myles",
   "license": "MIT",
